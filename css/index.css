@@ -1,1 +1,280 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+.flexing {
+  display: flex;
+  flex-direction: column;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+p,
+a {
+  font-family: "Open Sans", sans-serif;
+  color: black;
+  text-decoration: none;
+  line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Mono", monospace;
+}
+.navigation {
+  margin: 2rem 0;
+}
+.navigation .header {
+  display: flex;
+  justify-content: flex-end;
+}
+.navigation .header nav {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+}
+.navigation .header a {
+  font-weight: 600;
+}
+.navigation .header a:hover {
+  color: #808080;
+}
+.first-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #e9ecef;
+}
+.first-section .first-section-child {
+  width: 90%;
+  margin: 5rem auto;
+}
+.first-section .first-section-child .profile-pic {
+  width: 35%;
+}
+.first-section .first-section-child .profile-pic img {
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 4%;
+}
+.first-section .first-section-child h1 {
+  font-size: 3rem;
+}
+@media (max-width: 800px) {
+  .first-section .first-section-child h1 {
+    color: red;
+  }
+}
+.first-section .first-section-child .jam {
+  border-bottom: 1px solid #808080;
+}
+.first-section .first-section-child p {
+  margin: 2rem 0;
+}
+.first-section .first-section-child .button {
+  border: 1px solid black;
+  width: 10rem;
+  text-align: center;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  background-color: #808080;
+}
+.first-section .first-section-child .button a {
+  color: white;
+  font-weight: bold;
+}
+.first-section .first-section-child .button a:hover {
+  color: #e9ecef;
+}
+.second-section {
+  display: flex;
+  flex-direction: column;
+}
+.second-section .mid-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.second-section .mid-section .listen {
+  width: 45%;
+}
+.second-section .mid-section .listen h2 {
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+.second-section .mid-section .good-at {
+  width: 45%;
+}
+.second-section .mid-section .good-at h3 {
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+.second-section .mid-section .good-at ul {
+  border-left: 1px solid #808080;
+  border-right: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+}
+.second-section .mid-section .good-at ul li {
+  padding: 1rem;
+  border-top: 1px solid #808080;
+}
+.second-section .work-history h3 {
+  font-size: 1.5rem;
+}
+.second-section .work-history table {
+  width: 100%;
+  border-top: 1px solid #808080;
+}
+.second-section .work-history table th {
+  padding: 1rem;
+}
+.second-section .work-history table .trs {
+  background-color: #e9ecef;
+}
+.second-section .work-history table td {
+  border-top: 1px solid #808080;
+  text-align: center;
+  padding: 1rem;
+}
+footer .copywrite {
+  width: 100%;
+  background-color: #808080;
+  padding: 1rem;
+}
+footer .copywrite p {
+  text-align: center;
+  color: white;
+}
