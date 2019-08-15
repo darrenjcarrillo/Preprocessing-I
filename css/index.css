@@ -167,6 +167,12 @@ h6 {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  .navigation .header nav {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
 .navigation .header a {
   font-weight: 600;
 }
@@ -186,16 +192,25 @@ h6 {
   width: 35%;
 }
 .first-section .first-section-child .profile-pic img {
+  display: flex;
+  justify-content: center;
   width: 100%;
   margin: 2rem 0;
   border-radius: 4%;
 }
+@media (max-width: 500px) {
+  .first-section .first-section-child .profile-pic {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+  }
+}
 .first-section .first-section-child h1 {
   font-size: 3rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   .first-section .first-section-child h1 {
-    color: red;
+    color: yellow;
   }
 }
 .first-section .first-section-child .jam {
