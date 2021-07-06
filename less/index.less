@@ -4,56 +4,388 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
+
+// VARIABLES
+@greycolor: #808080;
+@background-color: #e9ecef;
+@header-font: "Roboto Mono", monospace;
+@pfont: "Open Sans", sans-serif;
+
+// MIXINS
+.flexing {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-nav {
+  @media (max-width: 500px) {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+.flex5 {
+  @media (max-width: 500px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+p,
+a {
+  font-family: @pfont;
+  color: black;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: @header-font;
+}
+.navigation {
+  margin: 2rem 0;
+  .header {
+    display: flex;
+    justify-content: flex-end;
+
+    nav {
+      width: 45%;
+      display: flex;
+      justify-content: space-between;
+
+      .flex-nav();
+    }
+    a {
+      font-weight: 600;
+    }
+
+    a:hover {
+      color: @greycolor;
+    }
+  }
+}
+
+.first-section {
+  .flexing();
+  background-color: @background-color;
+
+  .first-section-child {
+    width: 90%;
+    margin: 5rem auto;
+
+    .profile-pic {
+      width: 35%;
+
+      img {
+        width: 100%;
+        margin: 2rem 0;
+        border-radius: 4%;
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+
+      @media (max-width: 500px) {
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .jam {
+      border-bottom: 1px solid @greycolor;
+    }
+
+    p {
+      margin: 2rem 0;
+    }
+
+    .button {
+      border: 1px solid black;
+      width: 10rem;
+      text-align: center;
+      padding: 0.5rem 0;
+      border-radius: 0.5rem;
+      background-color: @greycolor;
+
+      a {
+        color: white;
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: @background-color;
+      }
+    }
+
+    @media (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.second-section {
+  .flexing();
+
+  .second-listen-up {
+    .mid-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .listen {
+        width: 45%;
+
+        h2 {
+          margin: 1rem 0;
+          font-size: 2rem;
+        }
+
+        .flex5();
+      }
+
+      .good-at {
+        width: 45%;
+
+        h3 {
+          margin: 1rem;
+          font-size: 1.5rem;
+        }
+        ul {
+          border-left: 1px solid @greycolor;
+          border-right: 1px solid @greycolor;
+          border-bottom: 1px solid @greycolor;
+
+          li {
+            padding: 1rem;
+            border-top: 1px solid @greycolor;
+          }
+        }
+
+        .flex5();
+      }
+
+      @media (max-width: 800px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  .work-history {
+    h3 {
+      font-size: 1.5rem;
+
+      @media (max-width: 500px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem auto;
+      }
+
+      @media (max-width: 800px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem auto;
+      }
+    }
+
+    table {
+      width: 100%;
+      border-top: 1px solid @greycolor;
+
+      th {
+        padding: 1rem;
+      }
+
+      .trs {
+        background-color: @background-color;
+      }
+
+      td {
+        border-top: 1px solid @greycolor;
+        text-align: center;
+        padding: 1rem;
+      }
+    }
+  }
+
+  .flex5();
+}
+
+footer {
+  .copywrite {
+    width: 100%;
+    background-color: @greycolor;
+    padding: 1rem;
+
+    p {
+      text-align: center;
+      color: white;
+    }
+  }
+}
